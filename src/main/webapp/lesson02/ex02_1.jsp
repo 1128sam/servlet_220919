@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +8,12 @@
 </head>
 <body>
 	<b>아이디: </b>
-	<%= request.getParameter("userId") %>
+	<%=request.getParameter("userId")%>
 	<br>
 	<b>이름: </b>
-	<%= request.getParameter("name") %>
+	<%=request.getParameter("name")%>
 	<br>
 	<b>나이: </b>
-	<%= request.getParameter("age") %>
+	<%=request.getParameter("age")%>
 </body>
 </html>

@@ -37,7 +37,7 @@
 
 	<%=num + 200%><br>
 
-	<%= getHelloWorld() %>
+	<%=getHelloWorld()%>
 
 	<%
 	List<Integer> list = new ArrayList<>();

@@ -18,7 +18,7 @@ public class GetMethodEx03 extends HttpServlet {
 		String userId = request.getParameter("user_id");
 		String name = request.getParameter("name");
 		Integer age = Integer.valueOf(request.getParameter("age"));
-
+ 
 		PrintWriter out = response.getWriter();
 //		out.println("user_id: " + userId);
 //		out.println("name: " + name);
