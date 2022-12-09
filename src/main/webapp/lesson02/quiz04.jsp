@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Quiz02 - 날짜와 시간</title>
+<title>Quiz04 - 계산기</title>
 <!-- bootstrap CDN link -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -23,11 +23,21 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-	<h1>날짜, 시간 링크</h1>
-	<div class="container">
-		<a class="btn btn-info" href="/lesson02/quiz02_1.jsp?type=time">현재
-			시간 확인</a> <a class="btn btn-success"
-			href="/lesson02/quiz02_1.jsp?type=date">현재 날짜 확인</a>
-	</div>
+<div class="container">
+<h2>사칙연산 계산기</h2>
+	<form method="post" action="/lesson02/quiz04_1.jsp">
+		<div class="d-flex">
+			<input type="text" id="num1" name="num1" class="col-2 form-control mr-2">
+			<select name="operator" class="col-1 form-control mr-2">
+				<option>+</option> <!-- value="plus"로 value 설정해도 됨(없어도 됨) -->
+				<option>-</option>
+				<option>X</option>
+				<option>/</option>
+			</select>
+			<input type="text" id="num2" name="num2" class="col-2 form-control mr-2">
+			<button type="submit" class="btn btn-success">계산하기</button>
+		</div>
+	</form>
+</div>
 </body>
 </html>

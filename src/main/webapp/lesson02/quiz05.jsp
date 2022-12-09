@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Quiz02 - 날짜와 시간</title>
+<title>Quiz05 - 길이 변환</title>
 <!-- bootstrap CDN link -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -23,11 +23,18 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-	<h1>날짜, 시간 링크</h1>
+<form method="post" action="/lesson02/quiz05_1.jsp">
 	<div class="container">
-		<a class="btn btn-info" href="/lesson02/quiz02_1.jsp?type=time">현재
-			시간 확인</a> <a class="btn btn-success"
-			href="/lesson02/quiz02_1.jsp?type=date">현재 날짜 확인</a>
+	<h1>길이 변환</h1>
+	<div class="d-flex mb-3">
+		<input type="text" class="form-control col-3 mr-2" id="length" name="length"><span class="mt-4">cm</span>
 	</div>
+	<label class="mr-2">인치 <input type="checkbox" name="type" value="inch"></label>
+	<label class="mr-2">야드 <input type="checkbox" name="type" value="yard"></label>
+	<label class="mr-2">피트 <input type="checkbox" name="type" value="feet"></label>
+	<label>미터 <input type="checkbox" name="type" value="meter"></label><br>
+	<button type="submit" class="btn btn-success mt-2">변환하기</button>
+	</div>
+</form>
 </body>
 </html>

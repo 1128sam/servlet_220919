@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Quiz02 - 날짜와 시간</title>
+<title>Quiz04_1</title>
 <!-- bootstrap CDN link -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -23,11 +23,39 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-	<h1>날짜, 시간 링크</h1>
-	<div class="container">
-		<a class="btn btn-info" href="/lesson02/quiz02_1.jsp?type=time">현재
-			시간 확인</a> <a class="btn btn-success"
-			href="/lesson02/quiz02_1.jsp?type=date">현재 날짜 확인</a>
+<% 
+	double result = 0;
+	double n1 = Double.parseDouble(request.getParameter("num1"));
+	double n2 = Double.parseDouble(request.getParameter("num2"));
+	String type = request.getParameter("operator");
+	switch (type) {
+	case "+":
+		result = n1 + n2;
+		break;
+	case "-":
+		result = n1 - n2;
+		break;
+	case "X":
+		result = n1 * n2;
+		break;
+	case "/":
+		result = n1 / n2;
+		break;
+	}
+%>
+<!-- if (type.equals("+")) {
+		result = n1 + n2;
+	} else if (type.equals("-")) {
+		result = n1 - n2;
+	} else if (type.equals("X")) {
+		result = n1 * n2;
+	} else if (type.equals("/")){
+		result = n1 / n2;
+	} -->
+<div class="container">
+	<h1>계산 결과</h1>
+	<div class="display-4"><%=(int)n1%> <%=type%> <%=(int)n2%> = <span class="text-primary"><%=result%></span></div>
 	</div>
+</div>
 </body>
 </html>

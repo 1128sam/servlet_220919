@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Quiz03</title>
+<title>Quiz03 - BMI</title>
 <!-- bootstrap CDN link -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -27,9 +27,11 @@
 		<h2>체격 조건 입력</h2>
 		<form method="get" action="/lesson02/quiz03_1.jsp">
 			<div class="d-flex">
-				<input type="text" class="form-control col-2" name="userHeight" id="userHeight" placeholder="키를 입력하세요">cm
-				<input type="text" class="form-control col-2" name="userWeight" id="userWeight"	placeholder="몸무게를 입력하세요">kg
-				<button class="btn btn-info">계산</button>
+				<input type="text" class="form-control col-2" name="userHeight" id="userHeight" placeholder="키를 입력하세요">
+				<span class="mt-3 mr-3">cm</span>
+				<input type="text" class="form-control col-2" name="userWeight" id="userWeight"	placeholder="몸무게를 입력하세요">
+				<span class="mt-3 mr-3">kg</span>
+				<button type="submit" class="btn btn-info">계산</button>
 			</div>
 		</form>
 	</div>
