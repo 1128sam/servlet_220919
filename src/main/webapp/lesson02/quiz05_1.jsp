@@ -57,7 +57,7 @@
 						double m = cm / 100;
 						out.print(m + " m");
 					}
-				}				
+				}
 			}
 	%></h3>
 </div>
