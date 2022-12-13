@@ -94,8 +94,8 @@ list.add(map);
 			%>
 				<tr>
 					<td><%= id %></td>
-					<td><img src="<%=image %>" alt="1000" width="100px"></td>
-					<td><a href="/lesson02/quiz08_1.jsp" name="<%= id %>"><%= title %></a></td>
+					<td><img src="<%=image %>" alt="<%=title %>" width="100px"></td>
+					<td><a href="/lesson02/quiz08_1.jsp?id=<%= id %>"><%= title %></a></td>
 				</tr>
 				<% } %>
 			</tbody>
