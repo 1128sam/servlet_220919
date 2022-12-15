@@ -1,32 +1,10 @@
-<%@page import="java.util.HashMap"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Map"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
+<%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Quiz02 - 종합문제(세부사항)</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"	crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<style>
-	.logo {color: green;}
-	a:hover {color: blue;};
-	header {height: 80px;}
-	nav {height:50px;}
-	.contents {height: 200px;}
-	.contents2 {min-height: 300px;}
-	footer {height: 30px;}
-	
-	.music-info-text {text-size: 12px; color:#777;}
-</style>
-</head>
-<body>
-<% 
+    <% 
 List<Map<String, Object>> musicList = new ArrayList<>();
 
 Map<String, Object> musicInfo = new HashMap<>();
@@ -112,31 +90,9 @@ if (click == null && search != null) {
 } else {
 	out.print("wrong input");
 }
-
-for (Map<String, Object> item : musicList) {
-	if (searchTitle.equals(item.get("title"))) {
-		singer = item.get("singer").toString();
-		album = item.get("album").toString();
-		time = Integer.parseInt(item.get("time").toString());
-		composer = item.get("composer").toString();
-		lyricist = item.get("lyricist").toString();
-		thumbnail = item.get("thumbnail").toString();
-		id = Integer.parseInt(item.get("id").toString());
-	}
-}
 %>
-<div id="wrap" class="container">
-	<form method="get" action="/lesson03/quiz02/main_1.jsp">
-	<header class="d-flex">
-		<jsp:include page="header.jsp" />
-	</header>
-	<nav class="mt-4 col-6 d-flex justify-content-center align-items-center">
-		<jsp:include page="menu.jsp" />
-	</nav>
-	<h4>곡 정보</h4>
-	<div class="border border-success d-flex p-3">
-		<div class="mr-4">
-			<img src="<%=thumbnail %>" alt="<%=searchTitle %>" width="250">
+<div class="mr-3">
+			<img src="<%=thumbnail %>" alt="가수 이미지" width="250">
 		</div>
 		<div>
 			<div class="display-4"><%=searchTitle %></div><br>
@@ -145,7 +101,7 @@ for (Map<String, Object> item : musicList) {
 			<%
 			String displayTime = (time / 60) + ":" + (time - ((time / 60) * 60));
 			%>
-<small class="text-secondary"><pre>
+<small><pre class="text-secondary">
 앨범 	<%=album %>
 재생시간 <%=displayTime %>
 작곡가   <%=composer %>
@@ -153,18 +109,9 @@ for (Map<String, Object> item : musicList) {
 </pre></small>
 			</div>
 		</div>
-	</div>
-	
-	<div class="mt-5">
-		<h3>가사</h3>
-		<hr>
-		<p>가사 정보 없음</p>
-	</div>
-	
-	<footer>
-		<jsp:include page="footer.jsp" />
-	</footer>
-</form>
-</div>
-</body>
-</html>
+		
+		<div class="mt-5">
+			<h3>가사</h3>
+			<hr>
+			<p>가사 정보 없음</p>
+		</div>
