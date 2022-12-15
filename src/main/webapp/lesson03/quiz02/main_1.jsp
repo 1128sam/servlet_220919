@@ -14,7 +14,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <style>
-	a {color: blue;}
+	.logo {color: green;}
 	a:hover {color: blue;};
 	header {height: 80px;}
 	nav {height:50px;}
@@ -103,9 +103,16 @@ String composer = "";
 String lyricist = "";
 String thumbnail = "";
 int id = 0;
+if (click == null && search != null) {
+	searchTitle = search;
+} else if (click != null && search == null) {
+	searchTitle = click;
+} else {
+	out.print("wrong input");
+}
+
 for (Map<String, Object> item : musicList) {
-	if (search.equals(item.get("title"))) {
-		searchTitle = search;
+	if (searchTitle.equals(item.get("title"))) {
 		singer = item.get("singer").toString();
 		album = item.get("album").toString();
 		time = Integer.parseInt(item.get("time").toString());
@@ -117,36 +124,44 @@ for (Map<String, Object> item : musicList) {
 }
 %>
 <div id="wrap" class="container">
-<form method="get" action="/lesson03/quiz02/main_1.jsp">
-<header class="d-flex">
-		<div class="col-1"><h4 class="text-success">Melong</h4></div>
-		<div class="col-5 d-flex">
-			<input type="text" name="search" class="form-control">
-			<input type="submit" class="btn btn-info" value="검색">
-		</div>
+	<form method="get" action="/lesson03/quiz02/main_1.jsp">
+	<header class="d-flex">
+		<jsp:include page="header.jsp" />
 	</header>
-	<nav class="mt-4 col-5 d-flex justify-content-center align-items-center">
-		<ul class="nav nav-fill w-100 text-bold">
-			<li class="nav-item"><a href="#">멜롱차트</a></li>
-			<li class="nav-item"><a href="#">최신음악</a></li>
-			<li class="nav-item"><a href="#">장르음악</a></li>
-			<li class="nav-item"><a href="#">멜롱DJ</a></li>
-			<li class="nav-item"><a href="#">뮤직어워드</a></li>
-		</ul>
+	<nav class="mt-4 col-6 d-flex justify-content-center align-items-center">
+		<jsp:include page="menu.jsp" />
 	</nav>
-	<section class="contents d-flex">
-		<img src="<%=thumbnail %>" alt="<%=searchTitle %>" width="150px">
+	
+	<div class="border border-success d-flex p-3">
+		<div class="mr-4">
+			<img src="<%=thumbnail %>" alt="<%=searchTitle %>" width="250">
+		</div>
 		<div>
-			<span class="display-4"><%=searchTitle %></span>
-			<span><%=singer %></span>
-			<div>
-				<small>앨범 <%=album %></span>
-				<small>재생시간 <%=time %></span>
-				<small>작곡가 <%=composer %></span>
-				<small>작사가 <%=lyricist %></span>
+			<div class="display-4"><%=searchTitle %></div><br>
+			<div class="text-success text-bold"><%=singer %></div><br>
+			<div class="text-secondary mt-3">
+			<%
+			String displayTime = (time / 60) + ":" + (time - ((time / 60) * 60));
+			%>
+<small class="text-secondary"><pre>
+앨범 	<%=album %>
+재생시간 <%=displayTime %>
+작곡가   <%=composer %>
+작사가   <%=lyricist %>
+</pre></small>
 			</div>
 		</div>
-	</section>
+	</div>
+	
+	<div class="mt-5">
+		<h3>가사</h3>
+		<hr>
+		<p>가사 정보 없음</p>
+	</div>
+	
+	<footer>
+		<jsp:include page="footer.jsp" />
+	</footer>
 </form>
 </div>
 </body>

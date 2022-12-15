@@ -80,7 +80,7 @@
  musicList.add(musicInfo);
 %>
 <div class="border border-success d-flex p-3">
-	<div>
+	<div class="mr-3">
 		<img src="<%=artistInfo.get("photo")%>" alt="가수 이미지" width="150">
 	</div>
 	<div>

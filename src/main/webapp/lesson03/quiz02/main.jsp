@@ -15,13 +15,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <style>
-	a {color: blue;}
-	a:hover {color: blue, text-decoration:none;};
-	header {height: 70px;}
+	.logo {color: green;}
+	.logo:hover {color: green; text-decoration:none;}
+	a:hover {color: blue; text-decoration:none;};
+	header {height: 100px;}
 	nav {height:50px;}
 	.contents {min-height: 300px;}
-	/* .contents2 {min-height: 300px;} */
-	footer {height: 100px;}
+	footer {height: 70px;}
 	
 	.input-group {width:500px;}
 </style>
@@ -111,7 +111,7 @@
 	<header class="d-flex">
 		<jsp:include page="header.jsp" />
 	</header>
-	<nav class="mt-4 col-5 d-flex justify-content-center align-items-center">
+	<nav class="mt-4 col-7 d-flex justify-content-center align-items-center">
 		<jsp:include page="menu.jsp" />
 	</nav>
 
