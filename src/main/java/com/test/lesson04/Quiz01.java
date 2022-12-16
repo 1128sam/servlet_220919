@@ -37,11 +37,11 @@ public class Quiz01 extends HttpServlet {
 		
 		// DB select
 		PrintWriter out = response.getWriter();
-		String selectQuery = "select * from `real_estate`";
+		String selectQuery = "select * from `real_estate` order by `id` desc limit 10;";
 		try {
-			ResultSet resultSet = ms.select(selectQuery);
-			while (resultSet.next()) {
-				out.println("매물 주소: " + resultSet.getString("address") + ", 면적: " + resultSet.getInt("area") + ", 타입: " + resultSet.getString("type"));
+			ResultSet rs = ms.select(selectQuery);
+			while (rs.next()) {
+				out.println("매물 주소: " + rs.getString("address") + ", 면적: " + rs.getInt("area") + ", 타입: " + rs.getString("type"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
